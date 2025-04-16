@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shutty"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Shutty" Height="300" Width="400">
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Label Content="Shutty" Height="49" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" 
+               FontSize="24" FontWeight="Bold" Grid.Row="0"/>
+        <Button Content="Herunterfahren&#xa;abbrechen" HorizontalAlignment="Right" 
+                VerticalAlignment="Top" Height="60" Width="136" Margin="0,70,218,0" Grid.RowSpan="2" 
+                Click="Button_Herunterfahren_Abbrechen" RenderTransformOrigin="0.647,0.517"/>
+        <Button x:Name="Button_HerunterfahrenObj" Content="Herunterfahren" HorizontalAlignment="Left"  
+                VerticalAlignment="Top" Height="60" Width="111" Margin="250,70,0,0" Grid.RowSpan="2" 
+                Click="Button_Herunterfahren" IsEnabled="False"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+            <Button x:Name="Button_minus1hObj" Content="- 1 h" Margin="5,5,5,5" Click="Button_minus1h" IsEnabled="False"/>
+            <Button x:Name="Button_minus15minObj" Content="- 15&#xa;min" Margin="5,5,5,5" Click="Button_minus15min" IsEnabled="False"/>
+            <Label x:Name="Label_adjust_Timer" Content="00:00" VerticalAlignment="Center" FontSize="24"/>
+            <Button x:Name="Button_plus15minObj" Content="+ 15&#xa;min" Margin="5,5,5,5" Click="Button_plus15min"/>
+            <Button x:Name="Button_plus1hObj" Content="+ 1 h" Margin="5,5,5,5" Click="Button_plus1h"/>
+        </StackPanel>
+        <Label x:Name="Label_Remaining_Time" Content="00:00:00" HorizontalAlignment="Center"  
+               Grid.Row="3" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" 
+               Foreground="#FFB43939"/>
 
     </Grid>
 </Window>
